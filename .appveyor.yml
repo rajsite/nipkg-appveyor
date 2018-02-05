@@ -10,6 +10,7 @@ init:
 - cmd: npm -v
 - ps: $PSVersionTable
 install:
+  - ps: Install-Product node $env:nodejs_version
   - npm install
 platform:
   - Win32
