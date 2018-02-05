@@ -2,6 +2,8 @@ branches:
   except:
     - gh-pages
 image: Visual Studio 2017
+environment:
+  nodejs_version: "LTS"
 init:
 - tzutil /s "Central Standard Time"
 - cmd: node -v
