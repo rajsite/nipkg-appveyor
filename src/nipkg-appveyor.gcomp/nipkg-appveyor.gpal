@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<SourceFile Checksum="EA3F97186C1B35F63AE1AA7BDA541AF7" Timestamp="1D39E5A87555284" xmlns="http://www.ni.com/PlatformFramework">
+	<SourceModelFeatureSet>
+		<ParsableNamespace AssemblyFileVersion="5.2.0.58310" FeatureSetName="Editor" Name="http://www.ni.com/PlatformFramework" OldestCompatibleVersion="5.2.0.49153" Version="5.2.0.49153" />
+		<ApplicationVersionInfo Build="5.2.0.58310" Name="LabVIEW NXG" Version="2.0.0" />
+	</SourceModelFeatureSet>
+	<PaletteDefinition BindingKeywords="NativeTarget" PaletteBaseName="Diagram" xmlns="http://www.ni.com/PlatformFramework">
+		<PaletteContentCategory Display="Add-ons" Id="1" ShortName="Add-ons" UniqueId="NI.LabVIEW.VI:PaletteCategory.Addons" Weight="35">
+			<IconPanel Height="[float]40" Id="2" Left="[float]0" Top="[float]0" Width="[float]40">
+				<IconTemplate Id="3" Left="[float]0" TemplateName="[string]Blank" Top="[float]0" />
+				<Path Data="[PathGeometry]M 18,0 L 19,2 H 38 V 3 H 2 V 2 L 4,2 L 5,0 H 18 Z M 39,5 H 1 V 39 H 39 V 5 M 40,7 V 40 H 0 V 4 H 40 V 7 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#ff8d9194" Height="[float]40" Id="4" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+				<Path Data="[PathGeometry]M 39,39 H 1 V 5 H 39 V 39 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#fff3f4f5" Height="[float]40" Id="5" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+				<Path Data="[PathGeometry]M 28,34 C 28.2929993,34 28.5690002,33.9329987 28.8199997,33.8199997 C 28.507,34.5149994 27.8120003,35 27,35 L 9,35 C 7.89499998,35 7,34.1049995 7,33 L 7,15 C 7,14.1890001 7.48500013,13.493 8.18000031,13.1800003 C 8.06700039,13.4309998 8,13.7069998 8,14 L 8,32 C 8,33.1049995 8.89500046,34 10,34 L 28,34 Z M 30,32 L 29,32 L 12,32 C 10.8950005,32 10,31.1049995 10,30 L 10,13 L 10,12 C 10,11.7069998 10.0670004,11.4309998 10.1800003,11.1800003 C 9.73600006,11.3800001 9.38000011,11.7360001 9.18000031,12.1800003 C 9.06700039,12.4309998 9,12.7069998 9,13 L 9,31 C 9,32.1049995 9.89500046,33 11,33 L 29,33 C 29.2929993,33 29.5690002,32.9329987 29.8199997,32.8199997 C 30.2639999,32.6199989 30.6200008,32.2639999 30.8199997,31.8199997 C 30.5690002,31.9330006 30.2929993,32 30,32 Z M 33,29 L 33,11 C 33,9.89500046 32.1049995,9 31,9 L 13,9 C 11.8950005,9 11,9.89500046 11,11 L 11,29 C 11,30.1049995 11.8950005,31 13,31 L 31,31 C 32.1049995,31 33,30.1049995 33,29 Z M 28,21 L 23,21 L 23,26 L 21,26 L 21,21 L 16,21 L 16,19 L 21,19 L 21,14 L 23,14 L 23,19 L 28,19 L 28,21 Z" Fill="[SMSolidColorBrush]#b2000000" Height="[float]40" Id="6" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Top="[float]0" Width="[float]40" />
+			</IconPanel>
+			<PaletteContentCategory Display="rajsite" Id="7" ShortName="Library" UniqueId="4a9c36e9-76a9-4f96-95e1-cd2918db292d">
+				<IconPanel Height="[float]40" Id="8" Left="[float]0" Top="[float]0" Width="[float]40">
+					<IconTemplate Id="9" Left="[float]0" TemplateName="[string]Blank" Top="[float]0" />
+					<Path Data="[PathGeometry]M 18,0 L 19,2 H 38 V 3 H 2 V 2 L 4,2 L 5,0 H 18 Z M 39,5 H 1 V 39 H 39 V 5 M 40,7 V 40 H 0 V 4 H 40 V 7 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#ff8d9194" Height="[float]40" Id="10" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+					<Path Data="[PathGeometry]M 39,39 H 1 V 5 H 39 V 39 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#fff3f4f5" Height="[float]40" Id="11" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+				</IconPanel>
+				<PaletteContentCategory Display="nipkg-appveyor" Id="14" UniqueId="e0d31c85-f1e0-4e11-b1c3-8cefb471b4b2">
+					<IconPanel Height="[float]40" Id="15" Left="[float]0" Top="[float]0" Width="[float]40">
+						<IconTemplate Id="16" Left="[float]0" TemplateName="[string]Blank" Top="[float]0" />
+						<Path Data="[PathGeometry]M 18,0 L 19,2 H 38 V 3 H 2 V 2 L 4,2 L 5,0 H 18 Z M 39,5 H 1 V 39 H 39 V 5 M 40,7 V 40 H 0 V 4 H 40 V 7 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#ff8d9194" Height="[float]40" Id="17" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+						<Path Data="[PathGeometry]M 39,39 H 1 V 5 H 39 V 39 Z" EditMode="[ShapeEditMode]EditablePath" Fill="[SMSolidColorBrush]#fff3f4f5" Height="[float]40" Id="18" IsHitTestVisible="[bool]False" Left="[float]0" MinHeight="[float]1" MinWidth="[float]1" Stroke="[SMSolidColorBrush]#00ffffff" StrokeThickness="[float]1" Top="[float]0" Width="[float]40" />
+					</IconPanel>
+					<PaletteContentLeaf Id="12" MethodTarget="rajsite\-nipkg\-appveyor:FunctionTest\.gvi" />
+				</PaletteContentCategory>
+			</PaletteContentCategory>
+		</PaletteContentCategory>
+	</PaletteDefinition>
+</SourceFile>

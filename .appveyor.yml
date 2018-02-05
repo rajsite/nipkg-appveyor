@@ -1,0 +1,23 @@
+branches:
+  except:
+    - gh-pages
+image: Visual Studio 2017
+init:
+- tzutil /s "Central Standard Time"
+- cmd: node -v
+- cmd: npm -v
+- ps: $PSVersionTable
+install:
+  - npm install
+platform:
+  - Win32
+configuration:
+  - Debug
+test_script:
+  - npm run lint
+after_test:
+  - npm run build
+artifacts:
+  - path: 'dist\*.nipkg'
+    name: 'nipackage'
+    type: File
