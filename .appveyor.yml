@@ -12,6 +12,9 @@ init:
 install:
   - ps: Install-Product node $env:nodejs_version
   - npm install
+  - mkdir DownloadCache
+  - curl -fsS -o .\DownloadCache\NIPackageManager17.5.exe http://ftp.ni.com/support/softlib/AST/NIPM/NIPackageManager17.5.exe
+  - start /WAIT .\DownloadCache\NIPackageManager17.5.exe /Q
 platform:
   - Win32
 configuration:

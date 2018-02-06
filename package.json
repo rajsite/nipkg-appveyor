@@ -11,8 +11,7 @@
     "create-debian-binary-file": "node createDebianBinaryFile.js",
     "precreate-data-files": "rimraf dist/package/data && mkdirp dist/package/data/ni-paths-LVNXG200DIR64/Addons/rajsite/nipkg-appveyor",
     "create-data-files": "cd src && copyfiles nipkg-appveyor.gcomp/* ../dist/package/data/ni-paths-LVNXG200DIR64/Addons/rajsite/nipkg-appveyor/",
-    "fetch-nipkg": "powershell .\\fetchNIPackageManager.ps1",
-    "prebuild": "npm run fetch-nipkg && npm run create-control-file && npm run create-debian-binary-file && npm run create-data-files",
+    "prebuild": "npm run create-control-file && npm run create-debian-binary-file && npm run create-data-files",
     "build": "nipkg pack dist\\package dist\\",
     "lint": "eslint ."
   },
