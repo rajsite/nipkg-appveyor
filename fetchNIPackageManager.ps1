@@ -8,7 +8,4 @@ if (!(Test-Path DownloadCache\NIPackageManager17.5.exe)) {
     $ProgressPreference = $ProgressPreferenceOld;
 }
 
-Remove-Item NIPackageManagerCache -Recurse -Force -ErrorAction SilentlyContinue -ErrorVariable err
-Write-Output $err
-
-7z x .\DownloadCache\NIPackageManager17.5.exe -oNIPackageManagerCache
+.\DownloadCache\NIPackageManager17.5.exe /Q
