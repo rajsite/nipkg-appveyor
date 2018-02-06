@@ -1,5 +1,5 @@
 {
-  "name": "rajsite-nipkg-appveyor",
+  "name": "@rajsite/nipkg-appveyor",
   "version": "1.0.0",
   "description": "Test creating packages and feeds for NI Packages on AppVeyor",
   "homepage": "https://github.com/rajsite/nipkg-appveyor",
