@@ -5,55 +5,52 @@
 
     // Takes a package.json formmated object and generates a control file for a NI Package
     var createControlText = function (packageInfo) {
+        // Helper functions for building up control file
+
+        // Normal package names are just passed through. Scoped package names are changed to {scope}-{name}
+        var npmNameToPackageAttribute = function (name) {
+            var matches = name.match(/@(.+)\/(.+)/);
+            if (matches !== null) {
+                return matches[1] + '-' + matches[2];
+            }
+
+            return name;
+        };
+
+        var requiredPackageField = function (field) {
+            var value = packageInfo[field];
+            if (typeof value !== 'string' || value.length <= 0) {
+                throw new Error('Expected package.json field ' + field + ' to be a non-empty string. The following was provided: ' + value);
+            }
+
+            return value;
+        };
+
+        var dependencies = function () {
+            if (packageInfo['nipkg-settings'] === undefined || Array.isArray(packageInfo['nipkg-settings'].dependencies) === false) {
+                return undefined;
+            }
+
+            return packageInfo['nipkg-settings'].dependencies.join(', ');
+        };
+
         // Required fields form the package.json to map to the control file
         // Strictly speaking Homepage is not required but I think it's valuable. At the very least point to a NI Community page for people to ask questions.
-        var requiredControlFileAttributesPackageMap = {
-            Package: 'name',
-            Version: 'version',
-            Description: 'description', // TODO maybe need additional validation for multiline?
-            Homepage: 'homepage',
-            Maintainer: 'author',
-        };
-
-        var requiredControlFileAttributes = Object.entries(requiredControlFileAttributesPackageMap).reduce(function validateValue (obj, entry) {
-            var attribute = entry[0];
-            var packageKeyName = entry[1];
-            var value = packageInfo[packageKeyName];
-
-            if (typeof value !== 'string' || value.length <= 0) {
-                throw new Error('The control file attribute ' + attribute  + ' corresponding to package key ' + packageKeyName + ' is required and must be a non-empty string. The following was provided: ' + value);
-            }
-
-            obj[attribute] = value;
-            return obj;
-        }, {});
-
-        var staticControlFileAttributes = {
+        var controlFileAttributes = {
+            Package: npmNameToPackageAttribute(requiredPackageField('name')),
+            Version: requiredPackageField('version'),
+            Description: requiredPackageField('description'), // TODO maybe need additional validation for multiline?
+            Homepage: requiredPackageField('homepage'),
+            Maintainer: requiredPackageField('author'),
             Architecture: 'windows_x64',
-            'XB-Plugin': 'file' // TODO maybe make this user configurable
+            'XB-Plugin': 'file',
+            Dependencies: dependencies()
         };
 
-        // TODO do a fancy map thing here too maybe
-        var optionalControlFileAttributesUnfiltered = {
-            Dependencies: packageInfo.nipkg  ? (Array.isArray(packageInfo.nipkg.dependencies) ? packageInfo.nipkg.dependencies.join(', ') : undefined) : undefined
-        };
-
-        var optionalControlFileAttributes = Object.entries(optionalControlFileAttributesUnfiltered).reduce(function (obj, entry) {
-            var attribute = entry[0];
-            var value = entry[1];
-
-            if (value !== undefined) {
-                obj[attribute] = value;
-            }
-            return obj;
-        }, {});
-
-        var allControlFileAttributes = Object.assign({}, requiredControlFileAttributes, staticControlFileAttributes, optionalControlFileAttributes);
-        var controlFileText = Object.entries(allControlFileAttributes).map(function (entry) {
-            var attribute = entry[0];
-            var value = entry[1];
-
-            return attribute + ': ' + value;
+        var controlFileText = Object.entries(controlFileAttributes).filter(function (entry) {
+            return entry[1] !== undefined;
+        }).map(function (entry) {
+            return entry[0] + ': ' + entry[1];
         }).join('\n');
 
         return controlFileText;

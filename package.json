@@ -15,7 +15,7 @@
     "build": "nipkg pack dist\\package dist\\",
     "lint": "eslint ."
   },
-  "nipkg": {
+  "nipkg-settings": {
     "dependencies": [
       "ni-mstudio-analysis-fx45-runtime (>= 17.0.0.49153-0+f1)",
       "ni-labview-nxg-2.0.0-rte (>= 5.2.0.49154-0+f2)"
